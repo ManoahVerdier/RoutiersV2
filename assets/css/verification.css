@@ -1,0 +1,11 @@
+/* CSS spécifique au renouvellement du mdp */
+
+.form-mdp{
+    max-width: 750px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-mdp input{
+    margin-bottom:10px;
+}

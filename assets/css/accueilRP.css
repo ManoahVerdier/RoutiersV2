@@ -1,0 +1,10 @@
+/*Pas de padding pour éviter les retours à la ligne*/
+.card-body{
+padding-left:0px;
+padding-right:0px;
+}
+
+/*Couleur plus foncée*/
+body,.card{
+background:#eee
+}
