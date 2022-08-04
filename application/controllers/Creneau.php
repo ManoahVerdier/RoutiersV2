@@ -1,11 +1,8 @@
 <?php
 
 class Creneau extends MY_Controller {
-<<<<<<< HEAD
     setlocale(LC_ALL, 'fr_FR');
-=======
 
->>>>>>> 7ff721c (initial commit)
     public function __construct() {
         parent::__construct();
         $this->load->helper('url');
