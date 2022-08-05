@@ -77,7 +77,7 @@ class Rapport extends MY_Controller {
                 
                 $rap->idRap=$this->M_rapport->getIdByCren($part->id)->id;
                 $rap->date=$part->date;
-                $raps[]=$rap;
+                $raps[sizeof($raps)]=$rap;
             }
             
             usort($raps,array($this,"sortParts"));
