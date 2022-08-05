@@ -46,7 +46,7 @@ $fmt->setPattern('eeee d MMMM yyyy');
             if ($part->missing === '1' || $part->missing === 1) {
                 ?>
                 <tr class="table-danger">
-                    <td>Participation du <?= utf8_encode(datefmt_format($fmt,  strtotime($part->date))) ?></td>
+                    <td>Participation du <?= datefmt_format($fmt,  strtotime($part->date)) ?></td>
                     <td>
                         <form action='' method='post'>
                             <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
@@ -55,7 +55,7 @@ $fmt->setPattern('eeee d MMMM yyyy');
                     </td>
     <?php } else { ?>
                 <tr>
-                    <td>Participation du <?= utf8_encode(datefmt_format($fmt,  strtotime($part->date))) ?></td>
+                    <td>Participation du <?= datefmt_format($fmt,  strtotime($part->date)) ?></td>
                     <td>
                         <a class='dispo btn btn-primary' href="<?= site_url('rapport/consulterRP/' . $part->idRap) ?>">Voir le rapport</a>
                     </td>
