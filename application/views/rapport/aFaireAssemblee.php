@@ -10,7 +10,7 @@ $fmt = datefmt_create(
     IntlDateFormatter::FULL,
     IntlDateFormatter::FULL
 );
-$fmt->setPattern('eeee d mmm yyyy');
+$fmt->setPattern('eeee d MMMM yyyy');
 ?>
 <div class='mes_rapports'>
     <h3>Rapports de l'assemblée</h3>
@@ -55,7 +55,7 @@ $fmt->setPattern('eeee d mmm yyyy');
                     </td>
     <?php } else { ?>
                 <tr>
-                    <td>Participation du <?= utf8_encode(strftime('%A %e %B %Y', strtotime($part->date))) ?></td>
+                    <td>Participation du <?= utf8_encode(datefmt_format($fmt,  strtotime($part->date))) ?></td>
                     <td>
                         <a class='dispo btn btn-primary' href="<?= site_url('rapport/consulterRP/' . $part->idRap) ?>">Voir le rapport</a>
                     </td>

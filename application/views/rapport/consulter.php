@@ -10,7 +10,7 @@ $fmt = datefmt_create(
     IntlDateFormatter::FULL,
     IntlDateFormatter::FULL
 );
-$fmt->setPattern('eeee d mmm yyyy');
+$fmt->setPattern('eeee d MMMM yyyy');
 ?> 
 
 <div id='consRap'>
