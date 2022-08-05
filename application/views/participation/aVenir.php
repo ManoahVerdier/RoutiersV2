@@ -87,7 +87,7 @@ $fmt->setPattern('MMM');
             $currentMonth=utf8_encode(datefmt_format($fmt, strtotime($creneau->date)));
         ?>
     <div class="row mt-4 mb-2">
-        <h5><?=ucFirst(utf8_decode($currentMonth))?> <?= utf8_encode(datefmt_format($fmt, strtotime($creneau->date))) ?></h5>
+        <h5><?=ucFirst(utf8_decode($currentMonth))?> <?= utf8_encode(date("Y", strtotime($creneau->date))) ?></h5>
     </div>
     <div class="row hidden-phone">
         <div class="col-sm-12 col-md-2 font-weight-bold text-center">
