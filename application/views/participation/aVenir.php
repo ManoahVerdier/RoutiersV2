@@ -12,6 +12,7 @@ $fmt = datefmt_create(
     'America/Los_Angeles',
     IntlDateFormatter::GREGORIAN
 );
+$fmt->setPattern('MMM');
 ?> 
 
 <div id="wrapCreneaux">
