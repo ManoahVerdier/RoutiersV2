@@ -5,6 +5,13 @@
 
 /* Réglage du temps sur la France */
 setlocale(LC_ALL, 'fr_FR');
+$fmt = datefmt_create(
+    'fr_FR',
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::FULL,
+    'America/Los_Angeles',
+    IntlDateFormatter::GREGORIAN
+);
 ?> 
 
 <div id="wrapCreneaux">
@@ -75,11 +82,11 @@ setlocale(LC_ALL, 'fr_FR');
             $title = 'Administré par '.$creneau->nom;
         }
             
-        if(utf8_encode(date('F', strtotime($creneau->date))) !== $currentMonth){
-            $currentMonth=utf8_encode(date('F', strtotime($creneau->date)));
+        if(utf8_encode(datefmt_format($fmt,  strtotime($creneau->date))) !== $currentMonth){
+            $currentMonth=utf8_encode(datefmt_format($fmt, strtotime($creneau->date)));
         ?>
     <div class="row mt-4 mb-2">
-        <h5><?=ucFirst($currentMonth)?> <?= utf8_encode(date('F', strtotime($creneau->date))) ?></h5>
+        <h5><?=ucFirst($currentMonth)?> <?= utf8_encode(datefmt_format($fmt, strtotime($creneau->date))) ?></h5>
     </div>
     <div class="row hidden-phone">
         <div class="col-sm-12 col-md-2 font-weight-bold text-center">
