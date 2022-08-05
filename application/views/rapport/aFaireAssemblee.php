@@ -45,7 +45,7 @@ $fmt->setPattern('eeee d MMMM yyyy');
             /* Si le rapport est manquant */
             if ($part->missing === '1' || $part->missing === 1) {
                 ?>
-                <tr class="<?php strtotime($part->date)< strtotime("-90 days")?"table-danger":""?>">
+                <tr class="<?= strtotime($part->date)< strtotime("-90 days")?"table-danger":""?>">
                     <td>Participation du <?= datefmt_format($fmt,  strtotime($part->date)) ?></td>
                     <td>
                         <form action='' method='post'>
