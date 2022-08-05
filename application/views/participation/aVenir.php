@@ -8,9 +8,7 @@ setlocale(LC_ALL, 'fr_FR');
 $fmt = datefmt_create(
     'fr_FR',
     IntlDateFormatter::FULL,
-    IntlDateFormatter::FULL,
-    'France/Paris',
-    IntlDateFormatter::GREGORIAN
+    IntlDateFormatter::FULL
 );
 
 ?> 
