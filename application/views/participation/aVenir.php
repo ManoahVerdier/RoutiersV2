@@ -12,7 +12,7 @@ $fmt = datefmt_create(
     'America/Los_Angeles',
     IntlDateFormatter::GREGORIAN
 );
-$fmt->setPattern('MMM');
+
 ?> 
 
 <div id="wrapCreneaux">
@@ -82,7 +82,7 @@ $fmt->setPattern('MMM');
             $class = 'secondary';
             $title = 'Administré par '.$creneau->nom;
         }
-            
+        $fmt->setPattern('MMMM');
         if(utf8_encode(datefmt_format($fmt,  strtotime($creneau->date))) !== $currentMonth){
             $currentMonth=utf8_encode(datefmt_format($fmt, strtotime($creneau->date)));
         ?>
@@ -105,14 +105,15 @@ $fmt->setPattern('MMM');
     </div>
         <?php
         }
+        $fmt->setPattern('DDD d');
         ?>
         <div class="row stripped hover creneau mob-mb-10">
 
             <div class="col-sm-12 col-lg-2 col-xs-2 col-md-2 my-auto text-center">
-                <?= ucfirst(utf8_encode(strftime('%A %e', strtotime($creneau->date)))) ?>
+                <?= ucfirst(utf8_encode(datefmt_format($fmt, strtotime($creneau->date)))) ?>
             </div>
             <!--<div class="col-lg-1 col-xs-2 col-md-2 col-sm-2 my-auto text-center">
-                <?= utf8_encode(strftime('%e', strtotime($creneau->date))) ?>
+                <?= utf8_encode(datefmt_format($fmt, strtotime($creneau->date))) ?>
             </div>
             -->
             <div class="col-sm-12 col-lg-2 col-xs-2 col-md-2 my-auto text-center">
