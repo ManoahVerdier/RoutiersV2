@@ -582,6 +582,7 @@ class Rapport extends MY_Controller {
     }
 
     public function annulerApres($idCren){
+        $this->load->model('M_creneau');
         $this->M_creneau->annuleCrenDate($idCren);
     }
     
