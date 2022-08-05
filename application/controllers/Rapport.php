@@ -88,8 +88,12 @@ class Rapport extends MY_Controller {
             $data['misses']=$misses;
             $data['relance']=false;
             if($this->input->post()) {
-                $this->relancer($this->input->post()['idCren']);
-                $data['relance']=true;
+                if(isset($this->input->post()['type']) && $this->input->post()['type']="annuler"){
+                    $this->annulerApres($this->input->post()['idCren']);
+                } else {
+                    $this->relancer($this->input->post()['idCren']);
+                    $data['relance']=true;
+                }
             }
             $this->layout->set_container(1);
             $this->layout->set_RP();
@@ -122,16 +126,9 @@ class Rapport extends MY_Controller {
                     $raps[]=$rap;
                 }
             }
-            echo "TYEST";
             if($this->input->post()) {
-                print_r($this->input->post());
                 if(isset($this->input->post()['idCren'])){
-                    if(isset($this->input->post()['type']) && $this->input->post()['type']="annuler"){
-                        $this->annulerApres($this->input->post()['idCren']);
-                    } else {
-                        print_r($this->input->post());
-                        redirect(base_url().'Rapport/ajouter/'.$this->input->post()['idCren'].'/true');
-                    }
+                    redirect(base_url().'Rapport/ajouter/'.$this->input->post()['idCren'].'/true');
                 }
                 else{
                     
