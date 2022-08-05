@@ -124,6 +124,7 @@ class Rapport extends MY_Controller {
             }
             
             if($this->input->post()) {
+                print_r($this->input->post());
                 if(isset($this->input->post()['idCren'])){
                     if(isset($this->input->post()['type']) && $this->input->post()['type']="annuler"){
                         $this->annulerApres($this->input->post()['idCren']);
