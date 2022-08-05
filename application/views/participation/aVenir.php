@@ -105,7 +105,7 @@ $fmt = datefmt_create(
     </div>
         <?php
         }
-        $fmt->setPattern('DD d');
+        $fmt->setPattern('ddd d');
         ?>
         <div class="row stripped hover creneau mob-mb-10">
 
