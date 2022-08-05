@@ -68,7 +68,7 @@ class Rapport extends MY_Controller {
                     $rap->idRap=$this->M_rapport->getIdByCren($part->id)->id;
                     $rap->date=$part->date;
                 }
-                $raps[sizeof($raps)]=$rap;
+                $raps[]=$rap;
             }
             
             foreach($partsWithNoCren as $part){
@@ -77,7 +77,7 @@ class Rapport extends MY_Controller {
                 
                 $rap->idRap=$this->M_rapport->getIdByCren($part->id)->id;
                 $rap->date=$part->date;
-                $raps[sizeof($raps)]=$rap;
+                $raps[]=$rap;
             }
             
             usort($raps,array($this,"sortParts"));
@@ -97,7 +97,7 @@ class Rapport extends MY_Controller {
     
     private function sortParts($a, $b)
     {
-        return strtotime($a->date)-strtotime($b->date);
+        return strtotime($b->date)-strtotime($a->date);
     }
     
     public function rapportRP(){
