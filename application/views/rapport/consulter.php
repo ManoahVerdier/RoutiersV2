@@ -5,10 +5,16 @@
  */
 //Réglage du temps sur France
 setlocale(LC_ALL, 'fr_FR');
+$fmt = datefmt_create(
+    'fr_FR',
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::FULL
+);
+$fmt->setPattern('eeee d mmm yyyy');
 ?> 
 
 <div id='consRap'>
-    <h3>Participation du <?= utf8_encode(strftime('%A %e %B %Y',strtotime($part!=NULL?$part->date:$cren->date)))?> - <?=$part!=NULL?$part->heure:$cren->heure?> heures</h3>
+    <h3>Participation du <?= utf8_encode(datefmt_format($fmt, strtotime($part!=NULL?$part->date:$cren->date)))?> - <?=$part!=NULL?$part->heure:$cren->heure?> heures</h3>
 <?php
 /*Regroupement par langue rencontrées*/
 foreach($rencs as $renc){

@@ -5,6 +5,12 @@
  */
 //Régalge des paramètres de date : France
 setlocale(LC_ALL, 'fr_FR');
+$fmt = datefmt_create(
+    'fr_FR',
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::FULL
+);
+$fmt->setPattern('eeee d mmm yyyy');
 ?>
 <div class='mes_rapports'>
     <h3>Rapports de l'assemblée</h3>
@@ -40,7 +46,7 @@ setlocale(LC_ALL, 'fr_FR');
             if ($part->missing === '1' || $part->missing === 1) {
                 ?>
                 <tr class="table-danger">
-                    <td>Participation du <?= utf8_encode(strftime('%A %e %B %Y', strtotime($part->date))) ?></td>
+                    <td>Participation du <?= utf8_encode(datefmt_format($fmt,  strtotime($part->date))) ?></td>
                     <td>
                         <form action='' method='post'>
                             <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
