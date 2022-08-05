@@ -48,14 +48,21 @@ $fmt->setPattern('eeee d MMMM yyyy');
                 <tr class="<?= strtotime($part->date)> strtotime("-90 days")?"table-danger":""?>">
                     <td>Participation du <?= datefmt_format($fmt,  strtotime($part->date)) ?></td>
                     <td>
-                        <form action='' method='post'>
-                            <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
-                            <?php if(strtotime($part->date)> strtotime("-90 days")):?>
+                        
+                        <?php if(strtotime($part->date)> strtotime("-90 days")):?>
+                            <form action='' method='post'>
+                                <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
+                                <input type='hidden' id='type' name='type' value='relancer'/>
                                 <input type='submit' id='submit' name='submit' value='Relancer' class='missing btn btn-danger'/>
-                            <?php else: ?>
-                                <input type='submit' id='submit' name='submit' value='Pas de rapport' class='missing btn btn-danger disabled' disabled/>
-                            <?php endif; ?>
-                        </form>
+                            </form>
+                            <form action='' method='post'>
+                                <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
+                                <input type='hidden' id='type' name='type' value='annuler'/>
+                                <input type='submit' id='submit' name='submit' value="N'a pas eu lieu" class='missing btn btn-danger'/>
+                            </form>
+                        <?php else: ?>
+                            <input type='submit' id='submit' name='submit' value='Pas de rapport' class='missing btn btn-danger disabled' disabled/>
+                        <?php endif; ?>
                     </td>
     <?php } else { ?>
                 <tr>

@@ -97,6 +97,8 @@ class Rapport extends MY_Controller {
         }
     }
     
+
+
     private function sortParts($a, $b)
     {
         return strtotime($b->date)-strtotime($a->date);
@@ -123,7 +125,11 @@ class Rapport extends MY_Controller {
             
             if($this->input->post()) {
                 if(isset($this->input->post()['idCren'])){
-                    redirect(base_url().'Rapport/ajouter/'.$this->input->post()['idCren'].'/true');
+                    if(isset($this->input->post()['type']) && $this->input->post()['type']="annuler"){
+                        $this->annulerApres($this->input->post()['idCren']);
+                    } else {
+                        redirect(base_url().'Rapport/ajouter/'.$this->input->post()['idCren'].'/true');
+                    }
                 }
                 else{
                     
@@ -574,6 +580,10 @@ class Rapport extends MY_Controller {
         foreach($parts as $part){
             $this->mailing->sendRelanceMail($part->mail,$part->prenom,$date);
         }
+    }
+
+    public function annulerApres($idCren){
+        $this->M_creneau->annuleCrenDate($idCren);
     }
     
     public function gestionPubs(){

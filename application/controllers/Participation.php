@@ -3,7 +3,7 @@
 class Participation extends MY_Controller {
 
     public function __construct() {
-setlocale(LC_ALL, 'fr_FR');
+        setlocale(LC_ALL, 'fr_FR');
 
         parent::__construct();
         $this->load->helper('url');
@@ -272,7 +272,7 @@ setlocale(LC_ALL, 'fr_FR');
     public function partAVenir(){
         //RP seulement
         if ($this->require_min_level(6)) {
-setlocale(LC_ALL, 'fr_FR');
+            setlocale(LC_ALL, 'fr_FR');
 
             $this->load->model('M_creneau');
 
