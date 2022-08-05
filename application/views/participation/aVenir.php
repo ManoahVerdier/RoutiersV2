@@ -9,7 +9,7 @@ $fmt = datefmt_create(
     'fr_FR',
     IntlDateFormatter::FULL,
     IntlDateFormatter::FULL,
-    'America/Los_Angeles',
+    'France/Paris',
     IntlDateFormatter::GREGORIAN
 );
 
