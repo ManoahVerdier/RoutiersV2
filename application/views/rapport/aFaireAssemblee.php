@@ -50,12 +50,12 @@ $fmt->setPattern('eeee d MMMM yyyy');
                     <td>
                         
                         <?php if(strtotime($part->date)> strtotime("-90 days")):?>
-                            <form action='' method='post'>
+                            <form action='' method='post' class="d-inline-block">
                                 <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
                                 <input type='hidden' id='type' name='type' value='relancer'/>
                                 <input type='submit' id='submit' name='submit' value='Relancer' class='missing btn btn-danger'/>
                             </form>
-                            <form action='' method='post'>
+                            <form action='' method='post'  class="d-inline-block">
                                 <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
                                 <input type='hidden' id='type' name='type' value='annuler'/>
                                 <input type='submit' id='submit' name='submit' value="N'a pas eu lieu" class='missing btn btn-danger'/>
