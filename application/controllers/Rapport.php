@@ -128,6 +128,7 @@ class Rapport extends MY_Controller {
                     if(isset($this->input->post()['type']) && $this->input->post()['type']="annuler"){
                         $this->annulerApres($this->input->post()['idCren']);
                     } else {
+                        print_r($this->input->post());
                         redirect(base_url().'Rapport/ajouter/'.$this->input->post()['idCren'].'/true');
                     }
                 }
