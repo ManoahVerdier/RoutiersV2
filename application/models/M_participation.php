@@ -331,12 +331,9 @@ class M_participation extends CI_Model {
         $this->db->where('annule', 0);
         $this->db->where($this->table_cren_date . '.date <= ', date('Y-m-d'));
         $this->db->group_by($this->table_cren_date . '.date,'.$this->table_cren_date . '.id', 'DESC');
-        $this->db->order_by($this->table_cren_date . '.date', 'ASC');
+        $this->db->order_by($this->table_cren_date . '.id', 'DESC');
         $query = $this->db->get($this->table_name);
-        $str = $this->db->last_query();
-   
-    echo "<pre>";
-    print_r($str);
+        
         return $query->result();
     }
 
