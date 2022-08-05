@@ -34,7 +34,7 @@ class Mailing {
 
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject('Invitation à participer au témoignage aux routiers');
@@ -104,7 +104,7 @@ class Mailing {
 
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Annulation d'un créneau");
@@ -149,7 +149,7 @@ class Mailing {
 
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Annulation d'une participation");
@@ -194,7 +194,7 @@ class Mailing {
 
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Annulation d'une invitation");
@@ -243,7 +243,7 @@ class Mailing {
         
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Invitation reçue");
@@ -295,7 +295,7 @@ class Mailing {
         
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Rapport non complété");
@@ -350,7 +350,7 @@ class Mailing {
         
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Information importante concernant une invitation");
@@ -407,7 +407,7 @@ class Mailing {
         
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Information importante concernant une participation");
@@ -463,7 +463,7 @@ class Mailing {
         
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Supression d'un créneau");
@@ -513,7 +513,7 @@ class Mailing {
         
         $this->CI->email->initialize($config);
 
-        $this->CI->email->from('support@verdier-developpement.com', 'Routiers');
+        $this->CI->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->CI->email->to($mail);
 
         $this->CI->email->subject("Rapport mensuel d'activité");
