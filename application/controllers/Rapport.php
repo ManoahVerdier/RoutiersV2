@@ -122,7 +122,7 @@ class Rapport extends MY_Controller {
                     $raps[]=$rap;
                 }
             }
-            
+            echo "TYEST";
             if($this->input->post()) {
                 print_r($this->input->post());
                 if(isset($this->input->post()['idCren'])){
