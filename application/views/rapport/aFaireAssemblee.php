@@ -45,15 +45,15 @@ $fmt->setPattern('eeee d MMMM yyyy');
             /* Si le rapport est manquant */
             if ($part->missing === '1' || $part->missing === 1) {
                 ?>
-                <tr class="<?php strtotime($part->date)> strtotime("-90 days")?"table-danger":""?>">
+                <tr class="<?php strtotime($part->date)< strtotime("-90 days")?"table-danger":""?>">
                     <td>Participation du <?= datefmt_format($fmt,  strtotime($part->date)) ?></td>
                     <td>
                         <form action='' method='post'>
                             <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
                             <?php if(strtotime($part->date)> strtotime("-90 days")):?>
-                            <input type='submit' id='submit' name='submit' value='Relancer' class='missing btn btn-danger'/>
+                                <input type='submit' id='submit' name='submit' value='Relancer' class='missing btn btn-danger'/>
                             <?php else: ?>
-                            <p>Pas de rapport</p>
+                                <input type='submit' id='submit' name='submit' value='Pas de rapport' class='missing btn btn-danger disabled' disabled/>
                             <?php endif; ?>
                         </form>
                     </td>
