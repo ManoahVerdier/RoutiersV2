@@ -1,7 +1,6 @@
 <?php
 
 class Creneau extends MY_Controller {
-    setlocale(LC_ALL, 'fr_FR');
 
     public function __construct() {
         parent::__construct();
@@ -10,6 +9,7 @@ class Creneau extends MY_Controller {
         $this->load->library('layout');
         $this->load->model('M_creneau');
         $this->load->model('M_utilisateurs');
+	setlocale(LC_ALL, 'fr_FR');
     }
 
 
@@ -17,20 +17,11 @@ class Creneau extends MY_Controller {
         if ($this->require_min_level(6)) {
             $this->layout->set_container(1);
             $this->layout->set_RP();
-<<<<<<< HEAD
-            if(isset($_GET['idCong'])){
-				$idCong = $_GET['idCong'];
-			} else {
-				$idCong = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
-			}  
-            
-=======
 	if(isset($_GET['idCong'])){
 		$idCong = $_GET['idCong'];
 	} else {
         	$idCong = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
 	}    
->>>>>>> 7ff721c (initial commit)
             
             if($this->input->post()){
                 $tabPost=$this->input->post();
@@ -161,8 +152,4 @@ class Creneau extends MY_Controller {
             $this->layout->view('creneau/gestLieux', $data);
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7ff721c (initial commit)

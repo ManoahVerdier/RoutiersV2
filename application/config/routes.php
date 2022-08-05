@@ -69,15 +69,6 @@ $route['proclamateurs'] = 'utilisateur/listeRP';
 $route['inscription/(:num)/(:any)'] = 'utilisateur/inscription/$1/$2';
 $route['creneaux'] = 'participation/partAVenir';
 $route['creneau/(:num)'] = 'participation/creneau/$1';
-<<<<<<< HEAD
-$route['annuler/(:num)'] = 'participation/annulerRP/$1';
-$route['rapportsAssemblee'] = 'rapport/rapportsAssemblee';
-$route['creneauxAssemblee'] = 'creneau/creneauxAssemblee';
-$route['informationsAssemblee'] = 'utilisateur/infosRP';
-$route['accueilAdmin'] = 'homepage/accueilAdmin';
-$route['rp'] = 'utilisateur/listeAdmin';
-$route['inscriptionRP/(:num)/(:any)'] = 'utilisateur/inscriptionRP/$1/$2';
-=======
 $route['creneauProcl/(:num)'] = 'participation/creneauProcl/$1';
 $route['annuler/(:num)'] = 'participation/annulerRP/$1';
 $route['annulerProcl/(:num)/(:num)'] = 'participation/annulerProcl/$1/$2';
@@ -100,4 +91,3 @@ $route['activiteAdmin'] = 'Participation/activiteAdmin';
 $route['modifier/(:num)/(:num)'] = 'Rapport/modifier/$1/$2';
 $route['ajoutLangue/(:num)'] = 'Rapport/ajoutLangueExistant/$1';
 $route['supprLng/(:num)/(:num)']='Rapport/supprLng/$1/$2';
->>>>>>> 7ff721c (initial commit)

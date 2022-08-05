@@ -17,11 +17,7 @@
                 </a>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="col-sm-3 text-center"><img src="<?=base_url()."assets/img/blueArk"?>" class='img-fluid blueArk ark mx-auto d-block hidden-phone'/></div>
-=======
         <div class="col-sm-3 text-center"><img src="<?=base_url()."assets/img/blueArk.png"?>" class='img-fluid blueArk ark mx-auto d-block hidden-phone'/></div>
->>>>>>> 7ff721c (initial commit)
         <div class="col-sm-12 col-md-3 col-lg-2 text-center filled planning">
             <div class="card">
                 <a href="<?= site_url('creneaux') ?>">
@@ -36,11 +32,7 @@
     </div>
     <div class="row">
         <div class="col-sm col-lg"></div>
-<<<<<<< HEAD
-        <div class="col-sm-4 col-md-4 col-lg-4"><img src="<?=base_url()."assets/img/greenArk"?>" class='img-fluid greenArk ark float-right hidden-phone'/></div>
-=======
         <div class="col-sm-4 col-md-4 col-lg-4"><img src="<?=base_url()."assets/img/greenArk.png"?>" class='img-fluid greenArk ark float-right hidden-phone'/></div>
->>>>>>> 7ff721c (initial commit)
         <div class="col-sm-12 col-md-3 col-lg-2 text-center filled rapport">
             <div class="card">
                 <a href="<?= site_url('activiteAdmin') ?>">
@@ -51,11 +43,7 @@
                 </a>
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="col-sm-4 col-md-4 col-lg-4"><img src="<?=base_url()."assets/img/redArk"?>" class='img-fluid redArk ark float-left hidden-phone'/></div>
-=======
         <div class="col-sm-4 col-md-4 col-lg-4"><img src="<?=base_url()."assets/img/redArk.png"?>" class='img-fluid redArk ark float-left hidden-phone'/></div>
->>>>>>> 7ff721c (initial commit)
         <div class="col-sm col-lg"></div>
     </div>
 </div>

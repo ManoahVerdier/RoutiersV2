@@ -3,6 +3,8 @@
 class Participation extends MY_Controller {
 
     public function __construct() {
+setlocale(LC_ALL, 'fr_FR');
+
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
@@ -16,27 +18,13 @@ class Participation extends MY_Controller {
         if ($this->require_min_level(1)) {
             //Récupération des dates de toutes les participation
             $dates = $this->M_participation->getPastPartByUser($this->auth_user_id);
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 7ff721c (initial commit)
             //Formattage
             $data['dates'] = array();
             foreach($dates AS $date)
             {
                 $data['dates'][]=$this->changeDateName(strtotime($date));
             }
-<<<<<<< HEAD
-            
-            $data['langues']=$this->M_participation->getLanguesRencontreesByUser($this->auth_user_id);
-            $data['pubs']=$this->M_participation->getPubLaisseesByUser($this->auth_user_id);
-            
-            $data['totDates']=$this->M_participation->getTotPastPartByUser($this->auth_user_id);
-            $data['totLangs']=$this->M_participation->getTotLangRencontreesByUser($this->auth_user_id);
-            $data['totPubs']=$this->M_participation->getTotPubLaisseesByUser($this->auth_user_id);
-            
-=======
 
             $data['langues']=$this->M_participation->getLanguesRencontreesByUser($this->auth_user_id);
             $data['pubs']=$this->M_participation->getPubLaisseesByUser($this->auth_user_id);
@@ -45,7 +33,6 @@ class Participation extends MY_Controller {
             $data['totLangs']=$this->M_participation->getTotLangRencontreesByUser($this->auth_user_id);
             $data['totPubs']=$this->M_participation->getTotPubLaisseesByUser($this->auth_user_id);
 
->>>>>>> 7ff721c (initial commit)
             /*Infos urgentes*/
             $congId = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
             $data['urgent']=0;
@@ -53,20 +40,12 @@ class Participation extends MY_Controller {
                 if($info->urgent && $info->actif=='on')
                     $data['urgent']=1;
             }
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 7ff721c (initial commit)
             $this->layout->set_container(1);
             $this->layout->view('participation/activite',$data);
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     public function activiteRP($congId=0) {
         if ($this->require_min_level(1)) {
             if($congId==0)
@@ -79,44 +58,25 @@ class Participation extends MY_Controller {
             {
                 $data['dates'][]=$this->changeDateName(strtotime($date->date));
             }
-<<<<<<< HEAD
-            
-            $data['langues']=$this->M_participation->getLanguesRencontreesByCong($congId);
-            $data['pubs']=$this->M_participation->getPubLaisseesByCong($congId);
-            
-=======
 
             $data['langues']=$this->M_participation->getLanguesRencontreesByCong($congId);
             $data['pubs']=$this->M_participation->getPubLaisseesByCong($congId);
 
->>>>>>> 7ff721c (initial commit)
             $data['totDates']=$this->M_participation->getTotPastPartByCong($congId);
             $data['totLangs']=$this->M_participation->getTotLangRencontreesByCong($congId);
             $data['totPubs']=$this->M_participation->getTotPubLaisseesByCong($congId);
             $data['totRapports']=$this->M_participation->getTotRapportByCong($congId);
-<<<<<<< HEAD
-            
-           
-=======
 
 
->>>>>>> 7ff721c (initial commit)
             $this->layout->set_RP();
             $this->layout->set_container(1);
             $this->layout->view('participation/activiteRP',$data);
         }
     }
-<<<<<<< HEAD
-    
-    public function activiteAdmin($idCong=-1) {
-        if ($this->require_min_level(9)) {
-            
-=======
 
     public function activiteAdmin($idCong=-1) {
         if ($this->require_min_level(9)) {
 
->>>>>>> 7ff721c (initial commit)
             if($idCong!=-1){
                 $data['langues']=$this->M_participation->getLanguesRencontreesByCong($idCong);
                 $data['pubs']=$this->M_participation->getPubLaisseesByCong($idCong);
@@ -142,21 +102,14 @@ class Participation extends MY_Controller {
                 $d = new stdClass;
                 $d->nom = $date->nom;
                 $d->id = $date->id;
-<<<<<<< HEAD
-=======
                 $d->Nb = $date->Nb;
                 $tot +=$date->Nb;
->>>>>>> 7ff721c (initial commit)
                 foreach($data['datesNoCren'] as $dateNoCren){
                     if($date->id==$dateNoCren->id){
                         $d->Nb=$dateNoCren->Nb+$date->Nb;
                         if($date->id==$idCong)
                             $totCong+=$d->Nb;
-<<<<<<< HEAD
-                        $tot+=$d->Nb;
-=======
                         $tot+=$dateNoCren->Nb;
->>>>>>> 7ff721c (initial commit)
                     }
                 }
                 $data['dates'][]=$d;
@@ -169,11 +122,7 @@ class Participation extends MY_Controller {
             $this->layout->view('participation/activiteAdmin',$data);
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     public function planning(){
         if ($this->require_min_level(1)) {
             $this->load->model('M_creneau');
@@ -218,11 +167,7 @@ class Participation extends MY_Controller {
                         if($crenAuto==1)
                             $this->inviterCren($idCren,1);
                     }
-<<<<<<< HEAD
-                
-=======
 
->>>>>>> 7ff721c (initial commit)
                     //Récupérer nombre participant créneau
 
                     $idCrenD = $this->M_participation->getInvit($this->input->post()['id'])->idCren;
@@ -246,11 +191,7 @@ class Participation extends MY_Controller {
                     $invitation->idCren = $this->input->post()['id']  ;
                     $invitation->idUtil = $this->auth_user_id ;
                     $idInvit = $this->M_participation->addInvit($invitation);
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> 7ff721c (initial commit)
                     $this->M_participation->setStatusInv(1,$idInvit);
                     /*Creer participation*/
                     $part = new stdClass;
@@ -259,11 +200,7 @@ class Participation extends MY_Controller {
                     $part->status = 1;
 
                     $this->M_participation->addPart($part);
-<<<<<<< HEAD
-                    
-=======
 
->>>>>>> 7ff721c (initial commit)
                     if($this->input->post()['nb']>1){
                         /*Créer accompagnant*/
                         $part = new stdClass;
@@ -279,19 +216,11 @@ class Participation extends MY_Controller {
             $idCong=$this->M_utilisateurs->getCongId($this->auth_user_id)->id;
             $data['parts']=$this->M_participation->getAllPartByUser($this->auth_user_id);
             $data['invits']=$this->M_participation->getAllInvitByUser($this->auth_user_id);
-<<<<<<< HEAD
-            
-            $data['creneaux'] = $this->M_creneau->getProcCrenLibreByCong($idCong);
-            $data['complet']  = $this->M_creneau->getIdComplet($idCong);
-            $data['partiel']  = $this->M_creneau->getIdPartiel($idCong);
-            
-=======
 
             $data['creneaux'] = $this->M_creneau->getProcCrenLibreByCong($idCong);
             $data['complet']  = $this->M_creneau->getIdComplet($idCong);
             $data['partiel']  = $this->M_creneau->getIdPartiel($idCong);
 
->>>>>>> 7ff721c (initial commit)
             /*infos urgentes ?*/
             $congId = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
             $data['urgent']=0;
@@ -307,11 +236,7 @@ class Participation extends MY_Controller {
             $this->layout->view('participation/planning',$data);
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     public function rapports(){
         /*Doit être connecté*/
         if ($this->require_min_level(1)) {
@@ -320,15 +245,9 @@ class Participation extends MY_Controller {
             $this->layout->view('participation/rapports',$data);
         }
     }
-<<<<<<< HEAD
-    
-    /**
-     * 
-=======
 
     /**
      *
->>>>>>> 7ff721c (initial commit)
      * @param string $myDate la date en timestamp
      * @return string la date sous forme de 'Aujourd'hui' etc. jusqu'à une semaine en arrière
      */
@@ -345,11 +264,7 @@ class Participation extends MY_Controller {
 		return ucfirst(strftime('%A %e %B %Y',$myDate));
 	}
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     /**
      * Page RP
      * Vue des participations à venir
@@ -357,42 +272,27 @@ class Participation extends MY_Controller {
     public function partAVenir(){
         //RP seulement
         if ($this->require_min_level(6)) {
+setlocale(LC_ALL, 'fr_FR');
+
             $this->load->model('M_creneau');
-<<<<<<< HEAD
-            
-            /* ID de la congrégation (pour recherche des créneaux */
-            $idCong = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
-            
-=======
 
             /* ID de la congrégation (pour recherche des créneaux */
             $idCong = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
 
->>>>>>> 7ff721c (initial commit)
             /* Liste des prochains créneaux */
             $data['creneaux'] = $this->M_creneau->getProcCrenByCong($idCong);
             $data['complet']  = $this->M_creneau->getIdComplet($idCong);
             $data['partiel']  = $this->M_creneau->getIdPartiel($idCong);
             $data['invits']   = $this->M_creneau->getIdInvit($idCong);
-<<<<<<< HEAD
-            
-            $data['idCong'] = $idCong;
-            
-=======
 
             $data['idCong'] = $idCong;
 
->>>>>>> 7ff721c (initial commit)
             $this->layout->set_container(1);
             $this->layout->set_RP();
             $this->layout->view('participation/aVenir', $data);
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     /**
      * Page RP
      * Détail d'un créneau
@@ -433,11 +333,7 @@ class Participation extends MY_Controller {
             $this->layout->view('participation/creneau', $data);
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     /**
      * Page RP
      * Détail d'un créneau
@@ -478,11 +374,7 @@ class Participation extends MY_Controller {
                 if($info->urgent && $info->actif=='on')
                     $data['urgent']=1;
             }
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 7ff721c (initial commit)
             $data['invits'     ] = $this->M_participation->getInvitationByCren($id);
             $this->layout->set_container(1);
             $this->layout->view('participation/creneauProcl', $data);
@@ -498,33 +390,16 @@ class Participation extends MY_Controller {
             $invits = $this->M_participation->getInvitationNullByCren($id);
             $dateObj=$this->M_creneau->getDate($id);
             $date = utf8_encode(strftime('%A %d %B %Y', strtotime($dateObj->date))).' à '.$dateObj->heure.'h';
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 7ff721c (initial commit)
             foreach($parts as $part){
                 $this->mailing->sendAnnulationMail($part->mail,$part->prenom,$date);
                 $this->M_participation->setStatusPart(0,$part->idPart);
             }
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> 7ff721c (initial commit)
             foreach($invits as $invit){
                 $this->mailing->sendAnnulationInvitMail($invit->mail,$invit->prenom,$date);
                 $this->M_participation->setStatusInv(0,$invit->idInv);
             }
-<<<<<<< HEAD
-            
-            $this->M_creneau->annuleCrenDate($id);
-            
-            redirect(site_url('creneau').'/'.$id);
-        }
-    }
-    
-=======
 
             $this->M_creneau->annuleCrenDate($id);
 
@@ -532,7 +407,6 @@ class Participation extends MY_Controller {
         }
     }
 
->>>>>>> 7ff721c (initial commit)
     public function annulerProcl($idCren,$idUtil){
         if ($this->require_min_level(1)) {
             setlocale(LC_ALL, 'fr_FR');
@@ -542,16 +416,6 @@ class Participation extends MY_Controller {
             $dateObj=$this->M_creneau->getDate($idCren);
             $date = utf8_encode(strftime('%A %d %B %Y', strtotime($dateObj->date))).' à '.$dateObj->heure.'h';
             $rpMail=$this->M_utilisateurs->get($this->M_utilisateurs->getCongRP($idUtil)->idRP)->mail;
-<<<<<<< HEAD
-            
-            $this->mailing->sendAnnulationMailRP($rpMail,$part->prenom,$date);
-            $this->M_participation->setStatusPart(0,$part->idPart);
-            
-            redirect(site_url('planning'));
-        }
-    }
-    
-=======
 
             $this->mailing->sendAnnulationMailRP($rpMail,$part->prenom,$date);
             $this->M_participation->setStatusPart(0,$part->idPart);
@@ -560,25 +424,11 @@ class Participation extends MY_Controller {
         }
     }
 
->>>>>>> 7ff721c (initial commit)
     private function inviter($idProcl, $idCren, $mail,$nom){
         $invitation = new stdClass;
         $invitation->date=date('Y-m-d');
         $invitation->idCren = $idCren  ;
         $invitation->idUtil = $idProcl ;
-<<<<<<< HEAD
-        
-        $this->M_participation->addInvit($invitation);
-        
-        setlocale(LC_ALL, 'fr_FR');
-        $dateObj=$this->M_creneau->getDate($idCren);
-        $date = utf8_encode(strftime('%A %d %B %Y', strtotime($dateObj->date))).' à '.$dateObj->heure.'h';
-        
-        $this->load->library('mailing'); 
-        $this->mailing->sendInvitationMail($mail, $nom,$date);
-    }
-    
-=======
 
         $this->M_participation->addInvit($invitation);
 
@@ -590,7 +440,6 @@ class Participation extends MY_Controller {
         $this->mailing->sendInvitationMail($mail, $nom,$date);
     }
 
->>>>>>> 7ff721c (initial commit)
     private function inviterCren($idCren,$nb){
         $this->load->model('M_creneau');
         $ids = $this->M_creneau->getCongFromCrenDate($idCren);
@@ -666,11 +515,7 @@ class Participation extends MY_Controller {
             }
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 7ff721c (initial commit)
     private function sendInvit($idUtil,$idCren){
         $this->load->library('mailing');
         $user = $this->M_utilisateurs->get($idUtil);

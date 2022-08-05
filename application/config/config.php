@@ -23,11 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
+
 $config['base_url'] = 'https://temoignage-normandie.site/routiers/';
-=======
-$config['base_url'] = 'https://temoignage-normandie.site/routiers';
->>>>>>> 7ff721c (initial commit)
 
 /*
 |--------------------------------------------------------------------------
@@ -227,11 +224,8 @@ $config['allow_get_array'] = TRUE;
 | your log files will fill up very fast.
 |
 */
-<<<<<<< HEAD
-$config['log_threshold'] = 2;
-=======
 $config['log_threshold'] = 1;
->>>>>>> 7ff721c (initial commit)
+
 
 /*
 |--------------------------------------------------------------------------

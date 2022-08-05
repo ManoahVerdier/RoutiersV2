@@ -75,17 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-<<<<<<< HEAD
-	'hostname' => 'verdierdgydvpmnt.mysql.db',
-	'username' => 'verdierdgydvpmnt',
-	'password' => 'ykiteididi4U',
-	'database' => 'verdierdgydvpmnt',
-=======
 	'hostname' => 'localhost',
 	'username' => 'routiers',
 	'password' => 'Actes8:29',
 	'database' => 'routiers',
->>>>>>> 7ff721c (initial commit)
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'rout_',
 	'pconnect' => FALSE,

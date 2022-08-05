@@ -1,14 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-<<<<<<< HEAD
-=======
 $config['mailtype'] = 'html';
 	$config['protocol'] = "smtp";
 	$config['smtp_host']="51.254.99.139";
 	$config['smtp_user']="tom";
 	$config['smtp_pass']="jerry";
 	$config['smtp_port']="12301";
->>>>>>> 7ff721c (initial commit)
 
 $config['default_head'] = '<body class="">
     <table border="0" cellpadding="0" cellspacing="0" class="body">
@@ -257,9 +254,6 @@ $config['default_css'] = "img {
         .td_align {display:block;width:100%;}	
         .table_align {display:block;width:100%;}	
         }
-<<<<<<< HEAD
-        th { width:100%; }";
-=======
         th { width:100%; }
         .table {
             width: 100%;
@@ -276,4 +270,3 @@ $config['default_css'] = "img {
             vertical-align: top;
             border-top: 1px solid #dee2e6;
         }";
->>>>>>> 7ff721c (initial commit)

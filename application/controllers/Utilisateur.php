@@ -387,19 +387,11 @@ class Utilisateur extends MY_Controller {
         /* Connexion requise */
         if ($this->require_min_level(6)) {
             //Récupération idCong
-<<<<<<< HEAD
-            if(isset($_GET['idCong'])){
-=======
 		if(isset($_GET['idCong'])){
->>>>>>> 7ff721c (initial commit)
 			$congId = $_GET['idCong'];
 		} else {
 	            	$congId = $this->M_utilisateurs->getCongId($this->auth_user_id)->id;
 		}
-<<<<<<< HEAD
-
-=======
->>>>>>> 7ff721c (initial commit)
             //Récupération des proclamateurs de cette cong
             $data['procls'] = $this->M_utilisateurs->getProclsFromCong($congId);
             $data['messageListeRP'] = $this->session->flashdata('messageListeRP');
@@ -958,11 +950,7 @@ class Utilisateur extends MY_Controller {
 
         $this->email->initialize($config);
 
-<<<<<<< HEAD
-        $this->email->from('support@verdier-developpement.com', 'Routiers');
-=======
         $this->email->from('support@temoignage-normandie.site', 'Routiers');
->>>>>>> 7ff721c (initial commit)
         $this->email->to($mail);
 
         $this->email->subject('Invitation à participer au témoignage aux routiers');
@@ -1026,24 +1014,17 @@ class Utilisateur extends MY_Controller {
      */
     private function sendInfoLink($mail, $nom="", $msg) {
         //Chargement de la configuration par défaut des mails
-<<<<<<< HEAD
-        $this->config->load('mailing');
-=======
         //$this->config->load('mailing');
->>>>>>> 7ff721c (initial commit)
         //Chargement de la bibliothèque d'envoi de mail
         $this->load->library('email');
 
         //Type de mail
         $config['mailtype'] = 'html';
-<<<<<<< HEAD
-=======
 	$config['protocol'] = "smtp";
 	$config['smtp_host']="51.254.99.139";
 	$config['smtp_user']="tom";
 	$config['smtp_pass']="jerry";
 	$config['smtp_port']="12301";
->>>>>>> 7ff721c (initial commit)
 
         //Headers et footers html
         $headerHTML = "<html>"
