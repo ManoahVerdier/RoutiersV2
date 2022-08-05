@@ -61,7 +61,9 @@ class Rapport extends MY_Controller {
                     $rap->missing=1;
                     $rap->idCren=$part->id;
                     $rap->date=$part->date;
-                    $misses=true;
+                    if(strtotime($part->date)> strtotime("-90 days")){
+                        $misses=true;
+                    }
                 }
                 else{
                     $rap->missing=0;
