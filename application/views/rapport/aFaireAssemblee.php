@@ -50,7 +50,7 @@ $fmt->setPattern('eeee d MMMM yyyy');
                     <td>
                         <form action='' method='post'>
                             <input type='hidden' id='idCren' name='idCren' value='<?=$part->idCren?>'/>
-                            <?php if(strtotime($part->date)< strtotime("-90 days")):?>
+                            <?php if(strtotime($part->date)> strtotime("-90 days")):?>
                             <input type='submit' id='submit' name='submit' value='Relancer' class='missing btn btn-danger'/>
                             <?php endif; ?>
                         </form>
