@@ -125,7 +125,7 @@ $cpt = 1;
                     </form>
                 </div>
                 <div class='col-sm-12 wrapCol px-0'>
-                    <input type='button' class='btn btn-<?= $creneauDate->annule?'outline-':''?><?=$nbPart>=$creneau->nb?'success':'primary'?> btn-block' value='<?=$creneauDate->annule?'Créneau annulé':$nbPart>=$creneau->nb?'Créneau complet':'Inviter manuellement'?>' onclick='openManual()' id='manualBtn' <?=$creneauDate->annule || $nbPart>=$creneau->nb?'disabled':''?>/>
+                    <input type='button' class='btn btn-<?= ($creneauDate->annule?'outline-':'')?><?=($nbPart>=$creneau->nb?'success':'primary')?> btn-block' value='<?=($creneauDate->annule?'Créneau annulé':($nbPart>=$creneau->nb?'Créneau complet':'Inviter manuellement'))?>' onclick='openManual()' id='manualBtn' <?=$creneauDate->annule || $nbPart>=$creneau->nb?'disabled':''?>/>
                     <input type='button' class='btn btn-secondary btn-block' value='Annuler' onclick='hideManual()' id='manualBtnClose'/>
                 </div>
             </div>
