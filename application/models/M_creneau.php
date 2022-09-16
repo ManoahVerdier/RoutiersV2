@@ -337,6 +337,7 @@ class M_creneau extends CI_Model {
         $this->db->where($this->table_conc . '.idCong', $idCong);
         //$this->db->where($this->table_name2 . '.date>', date('Y-m-d'));
         $this->db->where($this->table_name2 . '.date>"2019-03-10"');
+	$this->db->where($this->table_part . '.status=1');
         $this->db->order_by($this->table_name2.'.date ASC');
         $this->db->group_by($this->table_name2.'.id');
         $this->db->group_by($this->table_name.'.nb');
