@@ -33,12 +33,12 @@ $cpt = 1;
                             <div class="col-sm-12 text-center"><?= $part->prenom ?> <?= $part->nom ?></div>
                             <div class="col-sm-12 text-center"><?= $part->telephone ?></div>
                         </div>
-                        <?php $cpt++; } else {?>
+                        <?php $cpt++; } else { ?>
 			<div class="row participant pb-3 pt-3 border-top bg-danger <?= $cpt == $nbPart ? 'border-bottom' : '' ?>">
                             <div class="col-sm-12 text-center"><h6>Participation annulée </h6></div>
                             <div class="col-sm-12 text-center"><?= $part->prenom ?> <?= $part->nom ?></div>
                         </div>			
-			<?php}
+			<?php }
                         
                     }
                     while ($cpt <= 2) {
