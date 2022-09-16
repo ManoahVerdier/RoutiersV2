@@ -70,7 +70,7 @@ $cpt = 1;
                         } 
 			if ($invit->status != 1){
 			    $class='danger';
-			    $title= 'Annulée'
+			    $title= 'Annulée';
 			}
                         ?>
                         <div class="row pb-3 pt-3 alert alert-<?= $class ?> rounded-0">
