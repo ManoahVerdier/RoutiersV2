@@ -26,13 +26,14 @@ $cpt = 1;
             <div class='row px-4 full-height rowCol'>
                 <div class='col-sm-12 wrapCol border rounded shadow mob-mb-10 mob-mt-10'>
                     <h5 class="text-center pt-4 pb-4">Participants</h5>
-                    <?php foreach ($parts as $part) { ?>
+                    <?php foreach ($parts as $part) { 
+						if($part->status == 1){?>
                         <div class="row participant pb-3 pt-3 border-top <?= $cpt == $nbPart ? 'border-bottom' : '' ?>">
                             <div class="col-sm-12 text-center"><h6>Participant n°<?= $cpt ?></h6></div>
                             <div class="col-sm-12 text-center"><?= $part->prenom ?> <?= $part->nom ?></div>
                             <div class="col-sm-12 text-center"><?= $part->telephone ?></div>
                         </div>
-                        <?php
+                        <?php }
                         $cpt++;
                     }
                     while ($cpt <= 2) {
