@@ -67,7 +67,11 @@ $cpt = 1;
                         } else if ($invit->ok == 0 || $invit->ok == -1) {
                             $class = 'danger';
                             $title = 'Refusée';
-                        }
+                        } 
+			if ($invit->status != 1){
+			    $class='danger';
+			    $title= 'Annulée'
+			}
                         ?>
                         <div class="row pb-3 pt-3 alert alert-<?= $class ?> rounded-0">
                             <div class="col-sm-12 text-center"><b><?= $title ?></b></div>
