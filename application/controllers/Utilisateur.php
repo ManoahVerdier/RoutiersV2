@@ -874,8 +874,8 @@ class Utilisateur extends MY_Controller {
         ;
 
         $this->email->initialize($config);
-
-        $this->email->from('support@verdier-developpement.com', 'Routiers');
+	$this->email->from('routiers@temoignage-normandie.site', 'Routiers');
+        
         $this->email->to($mail);
 
         $this->email->subject("$sujet");
@@ -910,7 +910,7 @@ class Utilisateur extends MY_Controller {
                             </tr>
 
                      </td></tr>
-                     <tr><td><a href='www.verdier-developpement.fr/dev/routiers' class='btn btn-primary'>Aller sur le site</a></td></tr>
+                     <tr><td><a href='www.temoignage-normandie.info/routiers' class='btn btn-primary'>Aller sur le site</a></td></tr>
                      <tr><td>&nbsp;</td></tr>
                      <tr><td>Bonne journée !</td></tr>
                      <tr><td>L'équipe des routiers</td></tr>
@@ -1036,7 +1036,7 @@ class Utilisateur extends MY_Controller {
 
         $this->email->initialize($config);
 
-        $this->email->from('support@verdier-developpement.com', 'Routiers');
+	$this->email->from('routiers@temoignage-normandie.site', 'Routiers');
         $this->email->to($mail);
 
         $this->email->subject('Changement sur ton compte');
@@ -1113,7 +1113,8 @@ class Utilisateur extends MY_Controller {
 
         $this->email->initialize($config);
 
-        $this->email->from('support@verdier-developpement.com', 'Routiers');
+	$this->email->from('routiers@temoignage-normandie.site', 'Routiers');
+        
         $this->email->to($mail);
 
         $this->email->subject('Invitation à t\'inscrire pour le témoignage aux routiers');
