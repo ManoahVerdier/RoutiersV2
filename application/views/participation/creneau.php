@@ -73,7 +73,7 @@ $cpt = 1;
                             $class = 'danger';
                             $title = 'Refusée';
                         } 
-			if ($invit->status != 1){
+			if ($invit->status != 1 && $invit->status != null){
 			    $class='danger';
 			    $title= 'Annulée';
 			}
