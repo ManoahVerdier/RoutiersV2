@@ -836,7 +836,9 @@ class M_participation extends CI_Model {
 
         $query = $this->db->get($this->table_name2);
 
-        return $query->result();
+	echo $this->db->last_query();
+	    
+        //return $query->result();
     }
 
     /**
