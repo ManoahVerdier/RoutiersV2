@@ -827,7 +827,7 @@ class M_participation extends CI_Model {
      * @return array
      */
     function getInvitationByCren($idCren){
-        $this->db->select('*');
+        $this->db->select($this->table_name2.'.*,'.$this->table_user.'.*,'.$this->table_name.'.status');
     	
         $this->db->join($this->table_user,$this->table_user.'.id = '.$this->table_name2.'.idUtil');
 	$this->db->join($this->table_name,$this->table_name2.'.idCren = '.$this->table_name.'.idCren','LEFT');	
