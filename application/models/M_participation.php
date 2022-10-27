@@ -828,10 +828,10 @@ class M_participation extends CI_Model {
      */
     function getInvitationByCren($idCren){
         $this->db->select('*');
-    	$this->db->join($this->table_name,$this->table_name2.'.idCren = '.$this->table_name.'.idCren','LEFT');
+    	
         $this->db->join($this->table_user,$this->table_user.'.id = '.$this->table_name2.'.idUtil');
-		
-        $this->db->where($this->table_name.'.idCren', $idCren);
+	$this->db->join($this->table_name,$this->table_name2.'.idCren = '.$this->table_name.'.idCren','LEFT');	
+        $this->db->where($this->table_name2.'.idCren', $idCren);
         $this->db->order_by('ok');
 
         $query = $this->db->get($this->table_name2);
