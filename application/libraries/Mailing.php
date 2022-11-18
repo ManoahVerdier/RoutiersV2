@@ -227,7 +227,6 @@ class Mailing {
     }
     
     function sendInvitationMail($mail, $nom = '', $date) {
-		$mail = "manoah.verdier@gmail.com";
 
         //Type de mail
         $config['mailtype'] = 'html';
