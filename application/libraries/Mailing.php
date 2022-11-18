@@ -227,6 +227,7 @@ class Mailing {
     }
     
     function sendInvitationMail($mail, $nom = '', $date) {
+		$mail = "test-280fwh624@srv1.mail-tester.com";
 
         //Type de mail
         $config['mailtype'] = 'html';
