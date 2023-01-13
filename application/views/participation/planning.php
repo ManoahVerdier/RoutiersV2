@@ -75,7 +75,7 @@ foreach ($invits as $invit) {
 }
 
 foreach ($creneaux as $cren):
-    if(! in_array($cren->id,$complet) && ! in_array($cren->id,$partiel)&& ! in_array($cren->date,$parts) && ! in_array($cren->date,$invits) ):?>
+    if(! in_array($cren->id,$complet) && ! in_array($cren->date,$parts) && ! in_array($cren->date,$invits) ):?>
             {
                 title:'A pourvoir',
                 start: new Date(<?= date('Y', strtotime($cren->date)) ?>,<?= date('m', strtotime($cren->date)) - 1 ?>,<?= date('d', strtotime($cren->date)) ?>,<?= $cren->heure ?>, 0),

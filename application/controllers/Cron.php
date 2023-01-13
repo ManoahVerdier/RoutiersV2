@@ -134,6 +134,7 @@ class Cron extends MY_Controller {
         foreach($crens as $cren){
             $this->M_creneau->addOneCren($cren,$cren->id);
         }
+
     }
     
     public function sendReport(){

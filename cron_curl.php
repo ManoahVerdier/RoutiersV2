@@ -3,14 +3,14 @@
 $ch = curl_init();
 
 // Configuration de l'URL et d'autres options
-curl_setopt($ch, CURLOPT_URL, "http://www.verdier-developpement.fr/dev/routiers/Cron/lancerInvitation");
+curl_setopt($ch, CURLOPT_URL, "https://www.temoignage-normandie.site/routiers/Cron/lancerInvitation");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 
 // Récupération de l'URL et affichage sur le navigateur
 curl_exec($ch);
 
 // Configuration de l'URL et d'autres options
-curl_setopt($ch, CURLOPT_URL, "http://www.verdier-developpement.fr/dev/routiers/Cron/addCren");
+curl_setopt($ch, CURLOPT_URL, "https://www.temoignage-normandie.site/routiers/Cron/addCren");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 
 // Récupération de l'URL et affichage sur le navigateur
@@ -24,7 +24,7 @@ if(date("d", strtotime("first monday of this month"))==date('d')){
 $ch = curl_init();
 
 // Configuration de l'URL et d'autres options
-curl_setopt($ch, CURLOPT_URL, "http://www.verdier-developpement.fr/dev/routiers/Cron/sendReport");
+curl_setopt($ch, CURLOPT_URL, "https://www.temoignage-normandie.site/routiers/Cron/sendReport");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 
 // Récupération de l'URL et affichage sur le navigateur

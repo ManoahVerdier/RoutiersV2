@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 $config['mailtype'] = 'html';
-	$config['protocol'] = "smtp";
-	$config['smtp_host']="temoignage-normandie.site";
-	$config['smtp_user']="tom";
-	$config['smtp_pass']="jerry";
-	$config['smtp_port']="587";
-        $config['starttls'] = TRUE;
-	$config['smtp_crypto']="tls";
+$config['protocol'] = "smtp";
+$config['smtp_host']="temoignage-normandie.site";
+$config['smtp_user']="tom";
+$config['smtp_pass']="N0tJ3rry";
+$config['smtp_port']="587";
+$config['starttls'] = TRUE;
+$config['smtp_crypto']="tls";
 
 $config['default_head'] = '<body class="">
     <table border="0" cellpadding="0" cellspacing="0" class="body">
