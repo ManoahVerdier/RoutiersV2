@@ -1,35 +1,35 @@
 <?php
-// Création d'une nouvelle ressource cURL
-$ch = curl_init();
-
-// Configuration de l'URL et d'autres options
-curl_setopt($ch, CURLOPT_URL, "https://www.temoignage-normandie.site/routiers/Cron/lancerInvitation");
-curl_setopt($ch, CURLOPT_HEADER, 0);
-
-// Récupération de l'URL et affichage sur le navigateur
-curl_exec($ch);
-
-// Configuration de l'URL et d'autres options
-curl_setopt($ch, CURLOPT_URL, "https://www.temoignage-normandie.site/routiers/Cron/addCren");
-curl_setopt($ch, CURLOPT_HEADER, 0);
-
-// Récupération de l'URL et affichage sur le navigateur
-curl_exec($ch);
-
-// Fermeture de la session cURL
+$options = array(
+        CURLOPT_RETURNTRANSFER => true,   // return web page
+        CURLOPT_HEADER         => false,  // don't return headers
+        CURLOPT_FOLLOWLOCATION => true,   // follow redirects
+        CURLOPT_MAXREDIRS      => 10,     // stop after 10 redirects
+        CURLOPT_ENCODING       => "",     // handle compressed
+        CURLOPT_USERAGENT      => "test", // name of client
+        CURLOPT_AUTOREFERER    => true,   // set referrer on redirect
+        CURLOPT_CONNECTTIMEOUT => 120,    // time-out on connect
+        CURLOPT_TIMEOUT        => 120,    // time-out on response
+    ); 
+$url="http://temoignage-normandie.site/routiers/Cron/addCren";
+$ch = curl_init($url);
+curl_setopt_array($ch, $options);
+$content  = curl_exec($ch);
 curl_close($ch);
+var_dump($content);
+
+$url="https://www.temoignage-normandie.site/routiers/Cron/lancerInvitation";
+$ch = curl_init($url);
+curl_setopt_array($ch, $options);
+$content  = curl_exec($ch);
+curl_close($ch);
+var_dump($content);
+
 
 if(date("d", strtotime("first monday of this month"))==date('d')){
-// Création d'une nouvelle ressource cURL
-$ch = curl_init();
-
-// Configuration de l'URL et d'autres options
-curl_setopt($ch, CURLOPT_URL, "https://www.temoignage-normandie.site/routiers/Cron/sendReport");
-curl_setopt($ch, CURLOPT_HEADER, 0);
-
-// Récupération de l'URL et affichage sur le navigateur
-curl_exec($ch);    
-// Fermeture de la session cURL
+$url="https://www.temoignage-normandie.site/routiers/Cron/sendReport";
+$ch = curl_init($url);
+curl_setopt_array($ch, $options);
+$content  = curl_exec($ch);
 curl_close($ch);
+var_dump($content);
 }
-?>

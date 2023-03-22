@@ -1,13 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$config['charset'] = 'utf-8';
+$config['wordwrap'] = TRUE;
 $config['mailtype'] = 'html';
 $config['protocol'] = "smtp";
-$config['smtp_host']="temoignage-normandie.site";
-$config['smtp_user']="tom";
-$config['smtp_pass']="N0tJ3rry";
-$config['smtp_port']="587";
-$config['starttls'] = TRUE;
-$config['smtp_crypto']="tls";
+$config['smtp_host']="tls://email-smtp.us-east-1.amazonaws.com";
+$config['smtp_user']="AKIAUMKP75RZWTLEGMF7";
+$config['smtp_pass']="BMoKTWgzzBOcLjfH7hK1pWAVeROp3gmMzfpPyv/yc2OQ";
+$config['smtp_port']="465";
+$config['smtp_timeout'] = "20";
+$config['crlf'] = "\r\n";
+$config['newline'] = "\r\n";
+$config['mailsender'] = "routiers@temoignage-normandie.site";
+$config['starttls'] = FALSE;
+$config['smtp_crypto']="tsl";
 
 $config['default_head'] = '<body class="">
     <table border="0" cellpadding="0" cellspacing="0" class="body">
