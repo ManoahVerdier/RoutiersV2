@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-#   Empêche la visualisation de l'arborescence, n'a rien à voir avec le masquage du « index.php ».
-Options -Indexes
-
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} -s [OR]
-RewriteCond %{REQUEST_FILENAME} -l [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^.*$ - [NC,L]
-RewriteRule ^.*$ index.php [NC,L]
-=======
 <IfModule mod_rewrite.c>
 RewriteEngine On
 # !IMPORTANT! Set your RewriteBase here and don't forget trailing and leading
@@ -28,4 +17,3 @@ RewriteRule ^(.*)$ index.php?/$1 [L]
 # Submitted by: ElliotHaughin 
 ErrorDocument 404 /index2.php
 </IfModule>
->>>>>>> 7ff721c (initial commit)
